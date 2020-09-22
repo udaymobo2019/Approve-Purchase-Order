@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog id="addcondialog1" class="sapUiSizeCompact" afterClose="dialogAfterclose" title="Confirmation" contentWidth="35%">
+		<content>
+			<Text text="Are you sure you want to Rejected Purchase Order?"/>
+			<VBox>
+				<TextArea xmlns="sap.m" width="100%" rows="4" editable="true" placeholder="Enter your Comments" id="area2" class="form-control" growing="true" growingMaxLines="0"/>
+			</VBox>
+		</content>
+		<buttons>
+			<Button text="YES" type="Default" press="onpost"/>
+			<Button text="NO" type="Accept" press="onclose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

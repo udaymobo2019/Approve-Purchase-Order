@@ -1,0 +1,537 @@
+<mvc:View controllerName="zee.POGrunt.controller.Detail" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:footerbar="sap.ushell.ui.footerbar"
+		xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="true"
+		subSectionLayout="TitleOnTop">
+		<uxap:headerContent/>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader id="idponumber" objectImageURI="sap-icon://sales-document" objectTitle="{oGlobalModel>/Ponumber}"
+				objectSubtitle="ME29N" headerDesign="Light" objectImageShape="Square" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false"
+				isObjectSubtitleAlwaysVisible="false" isActionAreaAlwaysVisible="true">
+				<uxap:actions>
+					<Button text="" type="Transparent" icon="sap-icon://sys-cancel" iconFirst="true" press="click" width="auto" enabled="true" visible="true"
+						iconDensityAware="false"/>
+				</uxap:actions>
+				<uxap:navigationBar/>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="General Data" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="PO Document type" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idDocType" value="{oGlobalModel>/Doc_Type}" type="Text" editable="false" visible="true" width="auto"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Company Code" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idcompanycode" value="{oGlobalModel>/CCode}" type="Text" editable="false" visible="true" width="auto"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Purchase Org" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idpurchaseorg" value="{oGlobalModel>/Purch_org}" type="Text" editable="false" visible="true" width="auto"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Vendor" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idvendor" value="{oGlobalModel>/Vendor}" type="Text" editable="false" visible="true" width="auto"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Purchase Group" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idpurchasgrup" value="{oGlobalModel>/Purch_group}" type="Text" editable="false" visible="true" width="auto"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Header Text" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<TextArea id="TypeHere" value="{oGlobalModel>/Header_text}" valueLiveUpdate="" editable="false"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Item Details" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Item Details">
+						<uxap:blocks>
+							<layout:BlockLayout background="Default" visible="true">
+								<layout:content>
+									<layout:BlockLayoutRow scrollable="false">
+										<layout:content>
+											<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+												<layout:content>
+													<Table id="idTable" items="{oGlobalModel>/HeaderToItem}" width="100%" noDataText="No data" showSeparators="All" growing="true"
+														growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" itemPress="rowSelectionChanged"
+														visible="{Page1Model>/prTable}">
+														<columns>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="Item No" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="Material" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="Net Price" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="UoM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="Plant" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="true">
+																<header>
+																	<Text text="Total Amount" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="Name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="Street" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="Country" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="Delivery date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="District" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false">
+																<header>
+																	<Text text="Postal Code" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem type="Active">
+																<cells>
+																	<Input value="{oGlobalModel>POItem}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Material} - {oGlobalModel>Material_Desc}" type="Text" showValueHelp="false" enabled="true" editable="false"
+																		visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Net_Price}" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Quantity}" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" change="qtychange"/>
+																	<Input value="{oGlobalModel>unit}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Plant}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Net_Value}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>PlantName}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>street}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>country}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>Delivery_Date}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>city}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																	<Input value="{oGlobalModel>postal_code}" type="Text" showValueHelp="false" enabled="true" editable="false" visible="true" width="auto"
+																		valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</layout:content>
+											</layout:BlockLayoutCell>
+										</layout:content>
+									</layout:BlockLayoutRow>
+									<layout:BlockLayoutRow scrollable="false" visible="false">
+										<layout:content>
+											<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+												<layout:content>
+													<Panel height="auto" width="100%" headerText="Valuation Price" expandable="true" expanded="false" expandAnimation="true"
+														backgroundDesign="Solid">
+														<content>
+															<form:Form width="100%" editable="true" visible="true">
+																<form:title/>
+																<form:formContainers>
+																	<form:FormContainer visible="true">
+																		<form:formElements>
+																			<form:FormElement visible="true">
+																				<form:label>
+																					<Label text="Valuation price" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				</form:label>
+																				<form:fields>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																					<Text text="/" width="auto" maxLines="1" wrapping="false" textAlign="Center" textDirection="Inherit" visible="true"/>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																	<form:FormContainer visible="true">
+																		<form:formElements>
+																			<form:FormElement visible="true">
+																				<form:label>
+																					<Label text="Total value" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				</form:label>
+																				<form:fields>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																</form:formContainers>
+																<form:layout>
+																	<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+																</form:layout>
+															</form:Form>
+														</content>
+													</Panel>
+												</layout:content>
+											</layout:BlockLayoutCell>
+										</layout:content>
+									</layout:BlockLayoutRow>
+									<layout:BlockLayoutRow scrollable="false" visible="false">
+										<layout:content>
+											<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+												<layout:content>
+													<Panel height="auto" width="100%" headerText="Contact Person" expandable="true" expanded="false" expandAnimation="true"
+														backgroundDesign="Solid">
+														<content>
+															<form:Form width="100%" editable="true" visible="true">
+																<form:title/>
+																<form:formContainers>
+																	<form:FormContainer visible="true">
+																		<form:formElements>
+																			<form:FormElement visible="true">
+																				<form:label>
+																					<Label text="Created by" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				</form:label>
+																				<form:fields>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																				</form:fields>
+																			</form:FormElement>
+																			<form:FormElement visible="true">
+																				<form:label>
+																					<Label text="Create Ind." design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				</form:label>
+																				<form:fields>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																	<form:FormContainer visible="true">
+																		<form:formElements>
+																			<form:FormElement visible="true">
+																				<form:label>
+																					<Label text="Requisitioner" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				</form:label>
+																				<form:fields>
+																					<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																						valueStateText="Invalid entry" maxLength="0"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																</form:formContainers>
+																<form:layout>
+																	<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+																</form:layout>
+															</form:Form>
+														</content>
+													</Panel>
+												</layout:content>
+											</layout:BlockLayoutCell>
+										</layout:content>
+									</layout:BlockLayoutRow>
+								</layout:content>
+							</layout:BlockLayout>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Delivery" titleUppercase="false" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Delivery" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idname" value="{oGlobalModel>/PlantName}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+														valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Street" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idstreet" value="{oGlobalModel>/street}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+														valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Country" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idcountry" value="{oGlobalModel>/country}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+														valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title/>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Delivery Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<!--<Input id="iddeliverydate" value="{ path: 'oGlobalModel>Delivery_Date', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' } } }" type="Text" showValueHelp="false" editable="true" visible="true" width="auto" valueHelpOnly="false"
+														required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+													<DatePicker width="auto" value="{oGlobalModel>/Delivery_Date}" displayFormat="medium" required="false" valueStateText="Invalid entry"
+														enabled="true" editable="false" visible="true" valueFormat="yyyyMMdd"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="District" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="iddistc" value="{oGlobalModel>/city}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+														valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Postal Code" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="idpostcode" value="{oGlobalModel>/postal_code}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto"
+														valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Release Strategy" titleUppercase="false" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Release Strategy" mode="Expanded">
+						<uxap:blocks>
+							<List items="{oGlobalModel>/ReleaseStatus}">
+								<ObjectListItem title="{oGlobalModel>OrganizationalManagement}" type="Active" press="onListItemPress" number="" numberUnit="">
+									<ObjectAttribute text="{oGlobalModel>comment}" id="super" />
+									<firstStatus>
+										<ObjectStatus text="{oGlobalModel>ReleaseStatus}" state="{parts:[{path: 'oGlobalModel>ReleaseStatus'}], formatter:'.status'}"/>
+										<!--	<ObjectStatus text="{oGlobalModel>ReleaseStatus}" state="{ path: 'oGlobalModel>ReleaseStatus', formatter: 'sap.m.sample.ObjectListItem.Formatter.status' }"/>-->
+									</firstStatus>
+								</ObjectListItem>
+							</List>
+							<!--<List id="myList" mode="MultiSelect" headerText="Inverted Info State" items="{oGlobalModel>/ReleaseStatus}">
+								<items>
+									<StandardListItem title="{oGlobalModel>OrganizationalManagement}" description="{oGlobalModel>ReleaseCodedes}" icon="sap-icon://person-placeholder" iconInset="false" highlight="{highlight}" info="{info}"
+										infoState="{oGlobalModel>ReleaseStatus}" />
+								</items>
+							</List>-->
+							<!--<List width="100%" items="{oGlobalModel>/ReleaseStatus}" growing="false" growingThreshold="20" growingScrollToLoad="false" backgroundDesign="Solid">
+								<items>
+									<FeedListItem icon="" sender="{oGlobalModel>OrganizationalManagement}" text="{oGlobalModel>ReleaseCodedes}" info="{oGlobalModel>ReleaseCodedes}" timestamp="{oGlobalModel>ReleaseStatus}"/>
+								
+								</items>
+							</List>-->
+							<!--<List items="{oGlobalModel>/ReleaseStatus}" headerText="Products">
+								<ObjectListItem title="{oGlobalModel>OrganizationalManagement}" type="Active" press="onListItemPress" number="" numberUnit=""
+									showMarkers="true">
+									<firstStatus>
+										<ObjectStatus text="{oGlobalModel>ReleaseStatus}"
+											state="{ path: 'Status', formatter: 'sap.m.sample.ObjectListItemMarkLocked.Formatter.status' }"/>
+									</firstStatus>
+									<ObjectAttribute text=""/>
+								</ObjectListItem>
+							</List>-->
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Attachment" titleUppercase="false" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Attachment" mode="Expanded">
+						<uxap:blocks>
+							<!--<UploadCollection uploadEnabled="false" numberOfAttachmentsText="" showSeparators="All"
+								noDataText="The UploadCollection coming from BUILD cannot work in WebIDE without additional work" visible="true" maximumFileSize="10"
+								mimeType="image/jpeg,image/gif,image/png,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+								multiple="false" uploadUrl="" sameFilenameAllowed="false" mode="SingleSelectMaster" uploadComplete="_onUploadCollectionUploadComplete"
+								change="_onUploadCollectionChange" typeMissmatch="_onUploadCollectionTypeMissmatch" fileSizeExceed="_onUploadCollectionFileSizeExceed">
+								<headerParameters/>
+								<items/>
+								<parameters/>
+								<toolbar/>
+							</UploadCollection>-->
+							<List id="UploadCollection1" delete="ci_handleDelete" itemPress="downListPress" enableBusyIndicator="true" headerText=""
+								noDataText="No Attachment Found" growing="true" visible="true"></List>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Convert to PO" type="Default" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false"/>
+					<Button text="Approve" type="Emphasized" icon="sap-icon://accept" iconFirst="true" width="auto" enabled="true"
+						visible="{Page1Model>/Approvebutton}" iconDensityAware="false" press="approvepo"/>
+					<Button text="Cancel" type="Emphasized" icon="sap-icon://decline" iconFirst="true" width="auto" enabled="true"
+						visible="{Page1Model>/Rejectbutton}" iconDensityAware="false" press="rejectpo"/>
+							<Button text="Reject" type="Emphasized" icon="sap-icon://decline" iconFirst="true" width="auto" enabled="true"
+						visible="{Page1Model>/supervisorreject}" iconDensityAware="false" press="supervisorreject" id="supervisorreject"/>
+				</content>
+			</OverflowToolbar>
+		</uxap:footer>
+	</uxap:ObjectPageLayout>
+</mvc:View>

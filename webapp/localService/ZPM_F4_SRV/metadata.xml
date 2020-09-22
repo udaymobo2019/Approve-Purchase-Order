@@ -1,0 +1,310 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZPM_F4_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="FunctionalLocationDataPull" sap:content-version="1">
+				<Key><PropertyRef Name="FunctionalLocation"/></Key><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PlannerGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PlanningPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MainWorkCenter" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MainWorkCenterDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MaintPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PlantSection" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ABCIndicator" Type="Edm.String" Nullable="false" MaxLength="1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WorkCenterNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PPWorkcenter" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PPWorkName" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Room" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="PlnGrpDesc" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="PlnPlantDesc" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="PlantSecDesc" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="LocDesc" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="SystemStatus" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="UserStatus" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="FunctionalLocation" sap:content-version="1">
+				<Key><PropertyRef Name="FunctLocation"/></Key><Property Name="FunctLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MaintPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Planning plant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SuperiorFunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SuperiorFunctionalLocationindicator" Type="Edm.String" Nullable="false" MaxLength="1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MeasPointObj" sap:content-version="1">
+				<Key><PropertyRef Name="Type"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Measuring Point Object Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Text" Type="Edm.String" Nullable="false" sap:label="Measuring Point Object Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CharacteristicOfMeasuringPoint" sap:content-version="1">
+				<Key><PropertyRef Name="CharacteristicName"/></Key><Property Name="CharacteristicName" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Characteristic Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CharacteristicNameDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="CharacteristicNameDes"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Base Unit of Measure" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UnitDes" Type="Edm.String" Nullable="false" sap:label="Unit Desc" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CodeGroup" sap:content-version="1">
+				<Key><PropertyRef Name="Catalog"/><PropertyRef Name="CodeGrp"/></Key><Property Name="Catalog" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Catalog" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CodeGrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Code Group" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CodeGroupDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Code Group Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ValuationCode" Type="Edm.String" Nullable="false" sap:label="Valuation Code" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Equipment" sap:content-version="1">
+				<Key><PropertyRef Name="FunctionalLocation"/><PropertyRef Name="EquipmentNumber"/></Key><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" sap:label="Functional Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" sap:label="Equipment Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentDes" Type="Edm.String" Nullable="false" sap:label="Equipment Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPointDes" Type="Edm.String" Nullable="false" sap:label="Description of Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CostCenter" Type="Edm.String" Nullable="false" sap:label="Cost Center" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="FunctionalLocAllData" sap:content-version="1">
+				<Key><PropertyRef Name="FunctionalLocation"/></Key><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Functional Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Language Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description Functional Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDescFuzzy" Type="Edm.String" Nullable="false" MaxLength="40"
+					sap:label="Description of functional location in capital letters" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CostCenter" Type="Edm.String" Nullable="false" sap:label="Cost Center" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SupFLoc" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="SupFLoc" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" sap:label="Equipment Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Latitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Latitude" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Longitude" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="longitude" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CounterUOM" sap:content-version="1">
+				<Key><PropertyRef Name="UnitMeasurment"/></Key><Property Name="UnitMeasurment" Type="Edm.String" Nullable="false" sap:label="MSEHI" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Externalunitmeasurement" Type="Edm.String" Nullable="false" sap:label="MSEH3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Unitmeasurmenttext" Type="Edm.String" Nullable="false" sap:label="MSEHL" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPointDes" Type="Edm.String" Nullable="false" sap:label="Description of Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dimensionkey" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Dimension key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CostCenterMasterF4" sap:content-version="1">
+				<Key><PropertyRef Name="CostCenter"/><PropertyRef Name="CostCenterDes"/></Key><Property Name="CostCenter" Type="Edm.String" Nullable="false" sap:label="Cost Center" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Language Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CostCenterDes" Type="Edm.String" Nullable="false" sap:label="Cost Center Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Functional Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description Functional Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" sap:label="Equipment Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentDes" Type="Edm.String" Nullable="false" sap:label="Equipment Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunLocFlag" Type="Edm.String" Nullable="false" sap:label="Flag" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EquipFlag" Type="Edm.String" Nullable="false" sap:label="Equipment Flag" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPointDes" Type="Edm.String" Nullable="false" sap:label="Description of Measuring Point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="PlantDes" Type="Edm.String" Nullable="false" sap:label="Plant Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MeasuringPointMaster" sap:content-version="1">
+				<Key><PropertyRef Name="MeasuringPoint"/></Key><Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Measuring point" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPointDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasuringPointUOM" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Measurement Range Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Position" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="MeasPosition" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipment" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumberFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Equipment Flag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Functional loc." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Functional loc. Flag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="22" sap:label="Character Value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Flage(X or '')" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="System status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunlocStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="System status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="MaintPlanCategory" sap:content-version="1">
+				<Key><PropertyRef Name="MaintPlanCat"/></Key><Property Name="MaintPlanCat" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Maint Plan Category" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaintPlanCatDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Priority" sap:content-version="1">
+				<Key><PropertyRef Name="PriorityType"/></Key><Property Name="PriorityType" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PriorityDes" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="PriorityType Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequiredStartDate" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Required Start Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequiredEndDate" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Required End Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Ordertype" sap:content-version="1">
+				<Key><PropertyRef Name="OrderTyp"/></Key><Property Name="OrderTyp" Type="Edm.String" Nullable="false" sap:label="OrderType" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrderTypDes" Type="Edm.String" Nullable="false" sap:label="OrderType Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="UOM" sap:content-version="1">
+				<Key><PropertyRef Name="UnitMeasurment"/></Key><Property Name="UnitMeasurment" Type="Edm.String" Nullable="false" sap:label="Unit of Measurement" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Unitmeasurmenttext" Type="Edm.String" Nullable="false" sap:label="Unit of Measurement Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialNo" Type="Edm.String" Nullable="false" sap:label="Material Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MaterialNoDes" Type="Edm.String" Nullable="false" sap:label="Material Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="WorkOrder" sap:content-version="1">
+				<Key><PropertyRef Name="OrderNumber"/></Key><Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Order Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CreatedOn" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Created on" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrderNumberDse" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Material" sap:content-version="1">
+				<Key><PropertyRef Name="MaterialNumber"/></Key><Property Name="MaterialNumber" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PlantDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Plant Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialNumberDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Material Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Material Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialTypeDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description of material type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UOM" Type="Edm.String" Nullable="false" sap:label="Base Unit of Measure" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="UOMDes" Type="Edm.String" Nullable="false" sap:label="Base Unit of Measure Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CurrencyKey" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialGroup" Type="Edm.String" Nullable="false" MaxLength="9" sap:label="Material Group" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="To get Material Description F4"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NetPrice" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Net Price" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PurchaseGroup" Type="Edm.String" Nullable="false" sap:label="PurchaseGroup" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PurchaseGroupDesc" Type="Edm.String" Nullable="false" sap:label="PurchaseGroupDesc" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="StorageLoc" sap:content-version="1">
+				<Key><PropertyRef Name="Plant"/></Key><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Storage Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StorageLocationDes" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Description of Storage Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ReleaseStrategy" sap:content-version="1">
+				<Key><PropertyRef Name="ReleaseCode"/></Key><Property Name="ReleaseCode" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Release code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReleaseCodedes" Type="Edm.String" Nullable="false" sap:label="Release code text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrganizationalManagement" Type="Edm.String" Nullable="false" sap:label="Agent ID in Organizational Management"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReleaseStatus" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="EquipmentCategory" sap:content-version="1">
+				<Key><PropertyRef Name="EquipmentCat"/></Key><Property Name="EquipmentCat" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Equipment category" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentCatDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Equipment category text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ObjectType" sap:content-version="1">
+				<Key><PropertyRef Name="TechnicalObject"/></Key><Property Name="TechnicalObject" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Type of Technical Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TechnicalObjectDes" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Text for Object Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Plant" sap:content-version="1">
+				<Key><PropertyRef Name="Plants"/></Key><Property Name="Plants" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PlantsDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Plant Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Storage Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StorageLocationDes" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Description of Storage Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Name 2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="HouseNoStreet" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="House number and street" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="POBox" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="PO Box" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PostalCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Postal Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="City" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="City" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CountryKey" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Country Key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Region (State, Province, County)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PersonResponsibleF4" sap:content-version="1">
+				<Key><PropertyRef Name="Pernr"/></Key><Property Name="Pernr" Type="Edm.String" Nullable="false" sap:label="Personnel No." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" sap:label="Work center" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Short" Type="Edm.String" Nullable="false" sap:label="Object abbr." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Stext" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SubFunctionalLocation" sap:content-version="1">
+				<Key><PropertyRef Name="FunctionalLocation"/></Key><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Functional Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description Functional Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocationDescFuzzy" Type="Edm.String" Nullable="false" MaxLength="40"
+					sap:label="Description of functional location in capital letters" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="SuperiorFunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="SupFLoc" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SuperiorFunctionalLocationDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="SupFLoc Des"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="NotificationTyp" sap:content-version="1">
+				<Key><PropertyRef Name="NotificationType"/></Key><Property Name="NotificationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Notification Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationTypeDes" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Notification Type Texts"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ABCIndicator" sap:content-version="1">
+				<Key><PropertyRef Name="Indicator"/></Key><Property Name="Indicator" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Indicator_Text" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Indicator_Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Location" sap:content-version="1">
+				<Key><PropertyRef Name="LocationCode"/></Key><Property Name="MaintPlant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="MaintPlant" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LocationCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="AddressNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="AddressNumber" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Asset" sap:content-version="1">
+				<Key><PropertyRef Name="MainAsset"/></Key><Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="CompanyCode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MainAsset" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="MainAsset" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SubAsset" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="SubAsset" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="User_Access" sap:content-version="1">
+				<Key><PropertyRef Name="UserName"/></Key><Property Name="UserName" Type="Edm.String" Nullable="false" sap:label="User Name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SUserId" Type="Edm.String" Nullable="false" sap:label="Super User ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ApplicationName" Type="Edm.String" Nullable="false" sap:label="Application Name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Authorization" Type="Edm.String" Nullable="false" sap:label="Authorizer or Not" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="NotificationList" sap:content-version="1">
+				<Key><PropertyRef Name="Notification"/></Key><Property Name="Notification" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Notification No" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotifictnType" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Notification Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Short Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="WorkCenter" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Work center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PriorityType" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Priority Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PltWorkCtr" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant for Work Center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Priority" Type="Edm.String" Nullable="false" sap:label="Priority" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PriorityText" Type="Edm.String" Nullable="false" sap:label="Priority Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Count" Type="Edm.String" Nullable="false" sap:label="Total Number Of entries" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Open_count" Type="Edm.String" Nullable="false" sap:label="opencount" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Close_count" Type="Edm.String" Nullable="false" sap:label="closecount" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Order" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Order Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StartDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Required start date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EndDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Required End Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" sap:label="Notification Status" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ReportedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Name of Person Reporting Notification"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="createdDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Date on which the record was created"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MalStartDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Start of Malfunction (Date)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MalEndDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="End of Malfunction (Date)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StatusInd" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="StatusInd" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="If &quot;X' - Equipment or Fun Location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" sap:label="Functional Location" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" sap:label="Equipment Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="StatusType" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Status Type (1,2,3)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotifTypeFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="NotifTypeFlag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotifStatusFlag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="NotifStatusFlag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="notification_completed" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="notification_completed"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationCompletedDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="notification_completed_des"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationInProcess" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="notification_in_process"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationInProcessDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="notification_in_process_des"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrderAssigned" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="order_assigned" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrderAssignedDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="order_assigned_des" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OutstandingNotification" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="outstanding_notification"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OutstandingNotificationDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="outstanding_notification_des"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Last5Records" Type="Edm.String" Nullable="false" MaxLength="1"
+					sap:label="To list out Last 5 recordes for Technical Object Senerio" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="UserStatus" sap:content-version="1">
+				<Key><PropertyRef Name="UserStatu"/></Key><Property Name="UserStatu" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Individual status of an object (short form)"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UserStatusDes" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Object status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="NotificationDetailList" sap:content-version="1">
+				<Key><PropertyRef Name="NotificationNo"/></Key><Property Name="NotificationNo" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Notification Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NotificationDes" Type="Edm.String" Nullable="false" sap:label="Short Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="NotificationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Notification Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SystemStatus" Type="Edm.String" Nullable="false" sap:label="System Status" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ClosedNotification" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Closed Notification" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" sap:label="Retun Message" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZPM_F4_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="FunctionalLocationDataPullSet" EntityType="ZPM_F4_SRV.FunctionalLocationDataPull" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FunctionalLocationSet" EntityType="ZPM_F4_SRV.FunctionalLocation" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="MeasPointObjSet" EntityType="ZPM_F4_SRV.MeasPointObj" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CharacteristicOfMeasuringPointSet" EntityType="ZPM_F4_SRV.CharacteristicOfMeasuringPoint" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CodeGroupSet" EntityType="ZPM_F4_SRV.CodeGroup" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="EquipmentSet" EntityType="ZPM_F4_SRV.Equipment" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FunctionalLocAllDataSet" EntityType="ZPM_F4_SRV.FunctionalLocAllData" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CounterUOMSet" EntityType="ZPM_F4_SRV.CounterUOM" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CostCenterMasterF4Set" EntityType="ZPM_F4_SRV.CostCenterMasterF4" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="MeasuringPointMasterSet" EntityType="ZPM_F4_SRV.MeasuringPointMaster" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="MaintPlanCategorySet" EntityType="ZPM_F4_SRV.MaintPlanCategory" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PrioritySet" EntityType="ZPM_F4_SRV.Priority" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="OrdertypeSet" EntityType="ZPM_F4_SRV.Ordertype" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="UOMSet" EntityType="ZPM_F4_SRV.UOM" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false"
+				sap:addressable="false" sap:content-version="1"/><EntitySet Name="WorkOrderSet" EntityType="ZPM_F4_SRV.WorkOrder" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="MaterialSet" EntityType="ZPM_F4_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="StorageLocSet" EntityType="ZPM_F4_SRV.StorageLoc" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ReleaseStrategySet" EntityType="ZPM_F4_SRV.ReleaseStrategy" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="EquipmentCategorySet" EntityType="ZPM_F4_SRV.EquipmentCategory" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ObjectTypeSet" EntityType="ZPM_F4_SRV.ObjectType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PlantSet" EntityType="ZPM_F4_SRV.Plant" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PersonResponsibleF4Set" EntityType="ZPM_F4_SRV.PersonResponsibleF4" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SubFunctionalLocationSet" EntityType="ZPM_F4_SRV.SubFunctionalLocation" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="NotificationTypSet" EntityType="ZPM_F4_SRV.NotificationTyp" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ABCIndicatorSet" EntityType="ZPM_F4_SRV.ABCIndicator" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="LocationSet" EntityType="ZPM_F4_SRV.Location" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="AssetSet" EntityType="ZPM_F4_SRV.Asset" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="User_AccessSet" EntityType="ZPM_F4_SRV.User_Access" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="NotificationListSet" EntityType="ZPM_F4_SRV.NotificationList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="UserStatusSet" EntityType="ZPM_F4_SRV.UserStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="NotificationDetailListSet" EntityType="ZPM_F4_SRV.NotificationDetailList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZPM_F4_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZPM_F4_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

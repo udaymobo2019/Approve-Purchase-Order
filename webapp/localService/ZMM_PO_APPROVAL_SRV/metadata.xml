@@ -1,0 +1,93 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZMM_PO_APPROVAL_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="POList" sap:content-version="1">
+				<Key><PropertyRef Name="PONumber"/></Key><Property Name="PONumber" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="TotalValue" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Currency" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Plant_Description" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Company_code" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Company_Name" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Created_Date" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ImApprover" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="CreateHeader" sap:content-version="1">
+				<Key><PropertyRef Name="PONumber"/></Key><Property Name="PONumber" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CCode" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Doc_Type" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Vendor" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Purch_org" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Purch_group" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Release_status" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Header_text" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="username" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Text_Head" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ApproverComments" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Comment_l1" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Comment_l2" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Comment_l3" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="HeaderToItem" Relationship="ZMM_PO_APPROVAL_SRV.POHeaderToItem" FromRole="FromRole_POHeaderToItem"
+					ToRole="ToRole_POHeaderToItem"/><NavigationProperty Name="HeaderToRelease" Relationship="ZMM_PO_APPROVAL_SRV.POHeaderToRelease" FromRole="FromRole_POHeaderToRelease"
+					ToRole="ToRole_POHeaderToRelease"/><NavigationProperty Name="HeaderToReturn" Relationship="ZMM_PO_APPROVAL_SRV.POHeaderToReturn" FromRole="FromRole_POHeaderToReturn"
+					ToRole="ToRole_POHeaderToReturn"/></EntityType>
+			<EntityType Name="POItems" sap:content-version="1">
+				<Key><PropertyRef Name="PONumber"/></Key><Property Name="PONumber" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="POItem" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Material" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Material_Desc" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Co_code" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Plant" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Quantity" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="unit" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Net_Price" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Net_Value" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="PlantName" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="street" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="city" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="country" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="postal_code" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Delivery_Date" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="ReleaseStrategy" sap:content-version="1">
+				<Key><PropertyRef Name="Decision"/></Key><Property Name="Decision" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="Return" sap:content-version="1">
+				<Key><PropertyRef Name="Type"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<Association Name="POHeaderToRelease" sap:content-version="1"><End Type="ZMM_PO_APPROVAL_SRV.CreateHeader" Multiplicity="1" Role="FromRole_POHeaderToRelease"/><End Type="ZMM_PO_APPROVAL_SRV.ReleaseStrategy" Multiplicity="1" Role="ToRole_POHeaderToRelease"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_POHeaderToRelease"><PropertyRef Name="PONumber"/></Principal>
+					<Dependent Role="ToRole_POHeaderToRelease"><PropertyRef Name="Decision"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="POHeaderToReturn" sap:content-version="1"><End Type="ZMM_PO_APPROVAL_SRV.CreateHeader" Multiplicity="1" Role="FromRole_POHeaderToReturn"/><End Type="ZMM_PO_APPROVAL_SRV.Return" Multiplicity="*" Role="ToRole_POHeaderToReturn"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_POHeaderToReturn"><PropertyRef Name="PONumber"/></Principal>
+					<Dependent Role="ToRole_POHeaderToReturn"><PropertyRef Name="Type"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="POHeaderToItem" sap:content-version="1"><End Type="ZMM_PO_APPROVAL_SRV.CreateHeader" Multiplicity="1" Role="FromRole_POHeaderToItem"/><End Type="ZMM_PO_APPROVAL_SRV.POItems" Multiplicity="*" Role="ToRole_POHeaderToItem"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_POHeaderToItem"><PropertyRef Name="PONumber"/></Principal>
+					<Dependent Role="ToRole_POHeaderToItem"><PropertyRef Name="PONumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZMM_PO_APPROVAL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="POListSet" EntityType="ZMM_PO_APPROVAL_SRV.POList" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CreateHeaderSet" EntityType="ZMM_PO_APPROVAL_SRV.CreateHeader" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="POItemsSet" EntityType="ZMM_PO_APPROVAL_SRV.POItems" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ReleaseStrategySet" EntityType="ZMM_PO_APPROVAL_SRV.ReleaseStrategy" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ReturnSet" EntityType="ZMM_PO_APPROVAL_SRV.Return" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="POHeaderToItemSet" Association="ZMM_PO_APPROVAL_SRV.POHeaderToItem" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="CreateHeaderSet" Role="FromRole_POHeaderToItem"/><End EntitySet="POItemsSet" Role="ToRole_POHeaderToItem"/></AssociationSet>
+				<AssociationSet Name="POHeaderToReleaseSet" Association="ZMM_PO_APPROVAL_SRV.POHeaderToRelease" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="CreateHeaderSet" Role="FromRole_POHeaderToRelease"/><End EntitySet="ReleaseStrategySet" Role="ToRole_POHeaderToRelease"/></AssociationSet>
+				<AssociationSet Name="POHeaderToReturnSet" Association="ZMM_PO_APPROVAL_SRV.POHeaderToReturn" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="CreateHeaderSet" Role="FromRole_POHeaderToReturn"/><End EntitySet="ReturnSet" Role="ToRole_POHeaderToReturn"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZMM_PO_APPROVAL_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZMM_PO_APPROVAL_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
