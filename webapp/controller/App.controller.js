@@ -7,6 +7,7 @@ sap.ui.define([
 	return BaseController.extend("zee.POGrunt.controller.App", {
 
 		onInit : function () {
+			/*tests*/
 			var oViewModel,
 				fnSetAppNotBusy,
 				iOriginalBusyDelay = this.getView().getBusyIndicatorDelay();
